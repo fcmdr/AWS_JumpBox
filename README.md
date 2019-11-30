@@ -15,6 +15,10 @@ Create a security group and give it a name  ```SG_NAT_Instance``` (In inbound an
 
 -Create a JumpBox instance : Select a free tier machine, associate it to the VPC, enable a public IP, create a key pair. Give a name to the JumpBox instance ```JumpBox```, and associate it to a security group ```SG_JumpBox```
 
+### Private instance
+
+-Private instance : Let's call it ```Final Instance```, we must disable public IP we put instance in private subnet then we create another key pair associated to the instance. Accept inbound connection from the security group of the JumpBox via SSH. 
+
 ## Create public and private subnet 
 
 -Create a public subnet and attach it to our VPC, put an IP v4 address : ```10.0.1.0/24```.
@@ -28,9 +32,6 @@ Create a public route table associated with the VPC and an internet gateway.
 
 ![image](https://user-images.githubusercontent.com/58029143/69902903-11531800-1393-11ea-9c0f-ffc3004855a5.png)
 
-### Private instance
-
--Private instance : Let's call it ```Final Instance```, we must disable public IP we put instance in private subnet then we create another key pair associated to the instance. Accept inbound connection from the security group of the JumpBox via SSH. 
 
 ## Connection to the private instance via the JumpBox
 
